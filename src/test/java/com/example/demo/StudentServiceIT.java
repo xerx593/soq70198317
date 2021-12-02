@@ -16,7 +16,7 @@ class StudentServiceIT {
 
   @Test
   @Rollback //(assuming there is no student with id==1 in data base, otherwise: prepare/use fresh/see links)
-  void removeStudentByIdExists() throws StudentExistsException {
+  void removeStudentByIdExists() {
     // Given:
     Student student = Student.of(1L, "Drake", "drake@gmail.com");
     studentRepository.save(student);
@@ -30,7 +30,7 @@ class StudentServiceIT {
 
   @Test
   @Rollback // in any case
-  void removeStudentByIdNotExists() throws StudentExistsException {
+  void removeStudentByIdNotExists() {
     // Given:
     // nothing, we assume "empty db"
 

@@ -17,7 +17,7 @@ class StudenServiceTests {
   private StudentService testee;
 
   @Test
-  void removeStudentByIdExists() throws StudentExistsException {
+  void removeStudentByIdExists() {
     // Given:
     Student student = Student.of(1L, "Drake", "drake@gmail.com");
     when(studentRepoMock.existsById(1L)).thenReturn(true);
@@ -32,7 +32,7 @@ class StudenServiceTests {
   }
 
   @Test
-  void removeStudentByIdNotExists() throws StudentExistsException {
+  void removeStudentByIdNotExists() {
     // Given:
     when(studentRepoMock.existsById(1L)).thenReturn(false);
 

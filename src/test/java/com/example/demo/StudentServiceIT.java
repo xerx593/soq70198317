@@ -38,7 +38,7 @@ class StudentServiceIT {
     StudentExistsException thrown = assertThrows(
             StudentExistsException.class,
             () -> studentService.removeStudentByID(1L),
-            "Expected testee.removeStudentByID to throw, but it didn't");
+            "Expected studentService.removeStudentByID to throw, but it didn't");
     // Then:
     assertNotNull(thrown);
     assertTrue(thrown.getMessage().contains("Student doesn't exist"));

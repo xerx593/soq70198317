@@ -19,9 +19,8 @@ class StudenServiceTests {
   @Test
   void removeStudentByIdExists() {
     // Given:
-    Student student = Student.of(1L, "Drake", "drake@gmail.com");
     when(studentRepoMock.existsById(1L)).thenReturn(true);
-    doNothing().when(studentRepoMock).delete(student);
+    doNothing().when(studentRepoMock).deleteById(1L);
 
     // When:
     testee.removeStudentByID(1L);
